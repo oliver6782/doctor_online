@@ -1,0 +1,16 @@
+<!-- accounts/templates/accounts/doctor_register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Registration</title>
+</head>
+<body>
+    <h2>Doctor Registration</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
