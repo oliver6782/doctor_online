@@ -18,9 +18,25 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 
+from django.urls import path
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+
 urlpatterns = [
     path('', views.index, name='index'),  # Catch-all URL for React
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/auth/', include('djoser.urls')),
     path('admin/', admin.site.urls),
     path('pets/', include('pets.urls')),
-    path('register/',include('accounts.urls'))
+    path('register/',include('accounts.urls')),
+    path('prescriptions/', include('prescriptions.urls')),
+    path('medications/', include('medications.urls')),
+    path('chat/', include('chat.urls')),
 ]
+
+
+
+

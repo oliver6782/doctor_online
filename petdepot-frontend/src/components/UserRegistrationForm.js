@@ -19,7 +19,7 @@ const UserRegistrationForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('/api/register/common/', formData)
+        axios.post('register/common/', formData)
             .then(response => {
                 console.log('User registered successfully:', response.data);
             })

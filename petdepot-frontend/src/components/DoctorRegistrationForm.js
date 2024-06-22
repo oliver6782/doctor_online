@@ -20,7 +20,7 @@ const DoctorRegistrationForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('/api/register/doctor/', formData)
+        axios.post('register/doctor/', formData)
             .then(response => {
                 console.log('Doctor registered successfully:', response.data);
             })
